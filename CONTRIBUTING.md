@@ -34,6 +34,9 @@ Thank you for your interest in contributing to Strix! This guide will help you g
    export LLM_API_KEY="your-api-key"
    ```
 
+   > **Personal note:** I've been using `anthropic/claude-opus-4-5` locally and it works well.
+   > Set it with `export STRIX_LLM="anthropic/claude-opus-4-5"` if you have an Anthropic key.
+
 4. **Run Strix in development mode**
    ```bash
    uv run strix --target https://example.com
@@ -113,4 +116,4 @@ We value all contributions! Contributors will be:
 
 ---
 
-**Questions?** Reach out on [Discord](https://discord.gg/strix-ai) or create an issue. We're here to help!
+**Questions?** Reach out on [Discord](https://disco
