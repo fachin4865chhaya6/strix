@@ -36,6 +36,7 @@ Thank you for your interest in contributing to Strix! This guide will help you g
 
    > **Personal note:** I've been using `anthropic/claude-opus-4-5` locally and it works well.
    > Set it with `export STRIX_LLM="anthropic/claude-opus-4-5"` if you have an Anthropic key.
+   > I keep these exports in my `~/.zshrc` so I don't have to set them every session.
 
 4. **Run Strix in development mode**
    ```bash
@@ -109,11 +110,4 @@ We welcome feature ideas! Please:
 
 ## ✨ Recognition
 
-We value all contributions! Contributors will be:
-- Listed in release notes
-- Thanked in our Discord
-- Added to contributors list (coming soon)
-
----
-
-**Questions?** Reach out on [Discord](https://disco
+We value all contributors!
