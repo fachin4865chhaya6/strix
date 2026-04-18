@@ -67,11 +67,15 @@ strict = false
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
+# TODO: enable these as I get more comfortable with the codebase
+# disallow_any_generics = true
+# disallow_incomplete_defs = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 asyncio_mode = "auto"
-addopts = "--cov=src/strix --cov-report=term-missing"
+# removed --cov-report=term-missing to reduce noise during quick test runs
+addopts = "--cov=src/strix"
 
 [tool.coverage.run]
 source = ["src/strix"]
