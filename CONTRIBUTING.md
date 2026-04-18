@@ -40,6 +40,9 @@ Thank you for your interest in contributing to Strix! This guide will help you g
    >
    > **My setup:** I also export `export STRIX_LOG_LEVEL="debug"` during development — makes it
    > much easier to trace what the agent is doing without having to add print statements.
+   >
+   > **Tip:** If you're on a budget, `anthropic/claude-haiku-3-5` is significantly cheaper and
+   > still good enough for most development/testing work. I use opus only when testing final behavior.
 
 4. **Run Strix in development mode**
    ```bash
@@ -102,11 +105,4 @@ We welcome feature ideas! Please:
 
 - Check existing issues first
 - Describe the use case clearly
-- Explain why it would benefit users
-- Consider implementation approach
-- Be open to discussion
-
-## 🤝 Community
-
-- **Discord**: [Join our community](https://discord.gg/strix-ai)
-- **Issues**: [G
+- E
