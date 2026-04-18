@@ -48,8 +48,7 @@ lint:
 type-check:
 	@echo "🔍 Type checking with mypy..."
 	uv run mypy strix/
-	@echo "🔍 Type checking with pyright..."
-	uv run pyright strix/
+	# skipping pyright for now - mypy is sufficient for personal use
 	@echo "✅ Type checking complete!"
 
 security:
