@@ -75,7 +75,8 @@ disallow_untyped_defs = true
 testpaths = ["tests"]
 asyncio_mode = "auto"
 # removed --cov-report=term-missing to reduce noise during quick test runs
-addopts = "--cov=src/strix"
+# added -v for more readable output when running tests locally
+addopts = "--cov=src/strix -v"
 
 [tool.coverage.run]
 source = ["src/strix"]
