@@ -41,7 +41,8 @@ lint:
 	@echo "🔍 Linting code with ruff..."
 	uv run ruff check . --fix
 	@echo "📝 Running additional linting with pylint..."
-	uv run pylint strix/ --score=no --reports=no
+	# using --fail-under=8 to get a score threshold I'm comfortable with
+	uv run pylint strix/ --score=yes --reports=no --fail-under=8
 	@echo "✅ Linting complete!"
 
 type-check:
