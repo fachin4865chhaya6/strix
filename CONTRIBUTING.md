@@ -37,6 +37,9 @@ Thank you for your interest in contributing to Strix! This guide will help you g
    > **Personal note:** I've been using `anthropic/claude-opus-4-5` locally and it works well.
    > Set it with `export STRIX_LLM="anthropic/claude-opus-4-5"` if you have an Anthropic key.
    > I keep these exports in my `~/.zshrc` so I don't have to set them every session.
+   >
+   > **My setup:** I also export `export STRIX_LOG_LEVEL="debug"` during development — makes it
+   > much easier to trace what the agent is doing without having to add print statements.
 
 4. **Run Strix in development mode**
    ```bash
@@ -106,8 +109,4 @@ We welcome feature ideas! Please:
 ## 🤝 Community
 
 - **Discord**: [Join our community](https://discord.gg/strix-ai)
-- **Issues**: [GitHub Issues](https://github.com/usestrix/strix/issues)
-
-## ✨ Recognition
-
-We value all contributors!
+- **Issues**: [G
