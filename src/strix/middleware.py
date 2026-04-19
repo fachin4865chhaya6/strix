@@ -70,7 +70,7 @@ class BaseMiddleware(ABC):
             exc,
             exc_info=True,
         )
-        raise
+        raise exc
 
 
 class MiddlewareChain:
@@ -88,31 +88,4 @@ class MiddlewareChain:
         self._middlewares.append(middleware)
         logger.debug("Registered middleware: %s", middleware.name)
 
-    async def run(self, context: dict[str, Any], endpoint: Callable) -> Any:
-        """Execute the middleware chain, finishing with *endpoint*.
-
-        Args:
-            context: Shared context passed through every middleware.
-            endpoint: Final callable invoked after all middleware.
-
-        Returns:
-            Whatever *endpoint* (or an intercepting middleware) returns.
-        """
-        index = 0
-        middlewares = self._middlewares
-
-        async def call_next(ctx: dict[str, Any]) -> Any:
-            nonlocal index
-            if index < len(middlewares):
-                mw = middlewares[index]
-                index += 1
-                try:
-                    return await mw.process(ctx, call_next)
-                except Exception as exc:  # noqa: BLE001
-                    await mw.on_error(exc, ctx)
-            return await endpoint(ctx)
-
-        return await call_next(context)
-
-    def __len__(self) -> int:  # pragma: no cover
-        return len(self._middlewares)
+    async def run(self, context: dict[str
