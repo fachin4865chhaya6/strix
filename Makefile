@@ -61,7 +61,8 @@ check-all: format lint type-check security
 
 test:
 	@echo "🧪 Running tests..."
-	uv run pytest -v
+	# using -x to stop on first failure - faster feedback while learning the codebase
+	uv run pytest -v -x
 	@echo "✅ Tests complete!"
 
 test-cov:
@@ -87,4 +88,4 @@ clean:
 	@echo "✅ Cleanup complete!"
 
 dev: format lint type-check test
-	@echo "✅ Development cycle complete!"
+	@echo "✅ Development cycle compl
