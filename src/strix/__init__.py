@@ -1,6 +1,9 @@
 """Strix - A fork of usestrix/strix.
 
 A lightweight Python library for structured logging and observability.
+
+Personal fork notes:
+- Using this for my own projects; may tweak defaults over time.
 """
 
 from strix.logger import Logger
