@@ -43,6 +43,9 @@ Thank you for your interest in contributing to Strix! This guide will help you g
    >
    > **Tip:** If you're on a budget, `anthropic/claude-haiku-3-5` is significantly cheaper and
    > still good enough for most development/testing work. I use opus only when testing final behavior.
+   >
+   > **Note to self:** I also set `export STRIX_TIMEOUT=120` since I kept hitting timeout errors
+   > on slower targets. The default (60s) is too short for some of the sites I test against.
 
 4. **Run Strix in development mode**
    ```bash
@@ -95,5 +98,3 @@ When reporting bugs, please include:
 - Python version and OS
 - Strix version
 - LLMs being used
-- Full error output / stack trace
-- Steps to reproduce
