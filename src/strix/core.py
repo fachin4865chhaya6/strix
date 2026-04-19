@@ -38,6 +38,7 @@ class Strix:
         name: str,
         debug: bool = False,
         config: Optional[dict[str, Any]] = None,
+        stop_on_error: bool = False,
     ) -> None:
         """Initialize Strix.
 
@@ -45,10 +46,13 @@ class Strix:
             name: Application name.
             debug: Enable debug logging.
             config: Optional configuration dictionary.
+            stop_on_error: If False (default), re-raises exceptions from handlers.
+                Set to True to log errors and continue running remaining handlers.
         """
         self.name = name
         self.debug = debug
         self.config: dict[str, Any] = config or {}
+        self.stop_on_error = stop_on_error
         self._handlers: list[Callable[..., Any]] = []
 
         if debug:
@@ -97,9 +101,10 @@ class Strix:
             try:
                 handler(*args, **kwargs)
             except Exception as exc:
-                # Log the error with context instead of silently crashing mid-run
                 logger.error("Handler %s raised an exception: %s", handler.__name__, exc)
-                raise
+                if not self.stop_on_error:
+                    raise
+                # stop_on_error=True: log and continue with remaining handlers
 
     def __repr__(self) -> str:
-        return f"Strix(name={self.name!r}, handlers={len(self._handlers)})"
+        return f"Strix(name={self.name!r}, debug={self.debug}, handlers={len(self._handlers)})"
