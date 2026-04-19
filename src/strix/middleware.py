@@ -86,6 +86,6 @@ class MiddlewareChain:
                 f"Expected a BaseMiddleware instance, got {type(middleware).__name__!r}"
             )
         self._middlewares.append(middleware)
-        # Using info instead of debug so registrations are visible without
-        # enabling full debug logging — handy when building out new middleware.
-        logger.info("Registered middleware: %s", middleware.name)
+        # Changed from info to debug — registration messages were cluttering
+        # my logs during development. Debug level feels more appropriate here.
+        logger.debug("Registered middleware: %s", middleware.name)
