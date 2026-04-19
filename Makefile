@@ -63,7 +63,8 @@ test:
 	@echo "🧪 Running tests..."
 	# using -x to stop on first failure - faster feedback while learning the codebase
 	# added -p no:warnings to keep output clean while exploring
-	uv run pytest -v -x -p no:warnings
+	# added --tb=short for more concise tracebacks
+	uv run pytest -v -x -p no:warnings --tb=short
 	@echo "✅ Tests complete!"
 
 test-cov:
@@ -85,5 +86,4 @@ clean:
 	find . -type d -name ".ruff_cache" -exec rm -rf {} + 2>/dev/null || true
 	find . -type d -name "htmlcov" -exec rm -rf {} + 2>/dev/null || true
 	find . -name "*.pyc" -delete 2>/dev/null || true
-	find . -name ".coverage" -delete 2>/dev/null || true
 	@echo "✅ Clean complete!"
