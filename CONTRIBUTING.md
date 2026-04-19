@@ -95,14 +95,5 @@ When reporting bugs, please include:
 - Python version and OS
 - Strix version
 - LLMs being used
-- Full error traceback
+- Full error output / stack trace
 - Steps to reproduce
-- Expected vs actual behavior
-
-## 💡 Feature Requests
-
-We welcome feature ideas! Please:
-
-- Check existing issues first
-- Describe the use case clearly
-- E
