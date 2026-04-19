@@ -87,5 +87,9 @@ class MiddlewareChain:
             )
         self._middlewares.append(middleware)
         # Changed from info to debug — registration messages were cluttering
-        # my logs during development. Debug level feels more appropriate here.
-        logger.debug("Registered middleware: %s", middleware.name)
+        # my logs during dev
+        logger.debug("Registered middleware: '%s'", middleware.name)
+
+    def __len__(self) -> int:
+        """Return the number of middlewares in the chain."""
+        return len(self._middlewares)
