@@ -76,7 +76,8 @@ testpaths = ["tests"]
 asyncio_mode = "auto"
 # removed --cov-report=term-missing to reduce noise during quick test runs
 # added -v for more readable output when running tests locally
-addopts = "--cov=src/strix -v"
+# added --tb=short so tracebacks are easier to scan without being overwhelming
+addopts = "--cov=src/strix -v --tb=short"
 
 [tool.coverage.run]
 source = ["src/strix"]
