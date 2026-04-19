@@ -92,8 +92,8 @@ class Strix:
             raise StrixError("No handlers registered. Use `app.register` to add handlers.")
 
         logger.info("Running %s with %d handler(s)", self.name, len(self._handlers))
-        for handler in self._handlers:
-            logger.debug("Executing handler: %s", handler.__name__)
+        for i, handler in enumerate(self._handlers, start=1):
+            logger.debug("Executing handler %d/%d: %s", i, len(self._handlers), handler.__name__)
             handler(*args, **kwargs)
 
     def __repr__(self) -> str:
