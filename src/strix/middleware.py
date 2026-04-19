@@ -88,4 +88,6 @@ class MiddlewareChain:
         self._middlewares.append(middleware)
         logger.debug("Registered middleware: %s", middleware.name)
 
-    async def run(self, context: dict[str
+    # NOTE: using debug level here so production logs stay clean; change to
+    # logging.INFO locally if you want to trace chain execution during dev.
+    async def run(self, context: dict
