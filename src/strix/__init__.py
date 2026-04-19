@@ -4,6 +4,7 @@ A lightweight Python library for structured logging and observability.
 
 Personal fork notes:
 - Using this for my own projects; may tweak defaults over time.
+- Pinned to v0.1.0 as a stable base; will track upstream selectively.
 """
 
 from strix.logger import Logger
