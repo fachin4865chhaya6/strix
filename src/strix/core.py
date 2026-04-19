@@ -94,7 +94,12 @@ class Strix:
         logger.info("Running %s with %d handler(s)", self.name, len(self._handlers))
         for i, handler in enumerate(self._handlers, start=1):
             logger.debug("Executing handler %d/%d: %s", i, len(self._handlers), handler.__name__)
-            handler(*args, **kwargs)
+            try:
+                handler(*args, **kwargs)
+            except Exception as exc:
+                # Log the error with context instead of silently crashing mid-run
+                logger.error("Handler %s raised an exception: %s", handler.__name__, exc)
+                raise
 
     def __repr__(self) -> str:
         return f"Strix(name={self.name!r}, handlers={len(self._handlers)})"
