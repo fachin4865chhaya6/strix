@@ -78,7 +78,8 @@ asyncio_mode = "auto"
 # added -v for more readable output when running tests locally
 # added --tb=short so tracebacks are easier to scan without being overwhelming
 # removed -x so all tests run even on failure — easier to see the full picture
-addopts = "--cov=src/strix --cov-report=term-missing -v --tb=short"
+# using -x here so I stop at first failure — helps me focus while learning the codebase
+addopts = "--cov=src/strix --cov-report=term-missing -v --tb=short -x"
 
 [tool.coverage.run]
 source = ["src/strix"]
